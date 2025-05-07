@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mind Mate | Medical Hub</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9, #fff3e0);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+      color: #333;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background: linear-gradient(to right, #0077b6, #00b4d8);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .back-btn {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      background-color: white;
+      color: #0077b6;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      height:180px;
+      display:flex;
+      align-items:center;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, background 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: #e3f2fd;
+    }
+
+    .card p {
+      padding: 1rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.3rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #0077b6;
+      color: white;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="vaccinehomepage.html" class="back-btn">← Back to Dashboard</a>
+    <h1>Mind Mate</h1>
+    <p>Your Gateway to Trusted Medical Resources</p>
+  </header>
+
+  <main class="gallery">
+    <a class="card" href="Delhi.html" target="_blank"><p>Delhi</p></a>
+    <a class="card" href="Chandigarh.html" target="_blank"><p>Chandigarh</p></a>
+    <a class="card" href="Pinjore.html" target="_blank"><p>Pinjore</p></a>
+    <a class="card" href="Shimla.html" target="_blank"><p>Shimla</p></a>
+    <a class="card" href="Baddi.html" target="_blank"><p>Baddi</p></a>
+    <a class="card" href="Ludhiana.html" target="_blank"><p>Ludhiana</p></a>
+    <a class="card" href="Amritsar.html" target="_blank"><p>Amritsar</p></a>
+    <a class="card" href="Ambala.html" target="_blank"><p>Ambala</p></a>
+    <a class="card" href="Jaipur.html" target="_blank"><p>Jaipur</p></a>
+    <a class="card" href="Lucknow.html" target="_blank"><p>Lucknow</p></a>
+    <a class="card" href="Varansi.html" target="_blank"><p>Varanasi</p></a>
+    <a class="card" href="Ayodhya.html" target="_blank"><p>Ayodhya</p></a>
+    <a class="card" href="Patna.html" target="_blank"><p>Patna</p></a>
+    <a class="card" href="Ranchi.html" target="_blank"><p>Ranchi</p></a>
+    <a class="card" href="Hyderabad.html" target="_blank"><p>Hyderabad</p></a>
+    <a class="card" href="Banglore.html" target="_blank"><p>Bangalore</p></a>
+    <a class="card" href="Mumbai.html" target="_blank"><p>Mumbai</p></a>
+    <a class="card" href="Ahemdabad.html" target="_blank"><p>Ahmedabad</p></a>
+  </main>
+
+  <footer>
+    &copy; 2025 HealthConnect. All rights reserved.
+  </footer>
+
+</body>
+</html>

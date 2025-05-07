@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top 8 Hospitals in Varanasi</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.5;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Card */
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+    .card p {
+      margin: 0;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1e3c72;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+    footer a { color: #ffc107; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Top 8 Hospitals in Varanasi</h1>
+    <p>Your guide to the city’s leading medical institutions</p>
+  </header>
+
+  <main class="gallery">
+    <a class="card" href="https://en.wikipedia.org/wiki/Sir_Sunderlal_Hospital" target="_blank">
+      <img src="https://i.ibb.co/XxjCNkq9/h1.jpg" alt="Sir Sunderlal Hospital">
+      <p>Sir Sunderlal Hospital (BHU)</p>
+    </a>
+    <a class="card" href="https://varanasihospital.com/" target="_blank">
+      <img src="https://i.ibb.co/cSYyZ9q7/h2.jpg" alt="Varanasi Hospital & Medical Research Centre">
+      <p>Varanasi Hospital & Medical Research Centre</p>
+    </a>
+    <a class="card" href="https://www.popularhospital.in/" target="_blank">
+      <img src="https://i.ibb.co/xKTYg9VT/h6.jpg" alt="Popular Hospital">
+      <p>Popular Hospital</p>
+    </a>
+    <a class="card" href="https://heritagehospitals.com/" target="_blank">
+      <img src="https://i.ibb.co/C3q8hHL6/h9.jpg" alt="Heritage Hospitals">
+      <p>Heritage Hospitals</p>
+    </a>
+    <a class="card" href="https://www.maxwellhospital.in/" target="_blank">
+      <img src="https://i.ibb.co/SXJCHT3C/h3.jpg" alt="Maxwell Hospital">
+      <p>Maxwell Hospital</p>
+    </a>
+    <a class="card" href="https://infinitycarehospital.com/" target="_blank">
+      <img src="https://i.ibb.co/chhqY1GL/h4.jpg" alt="Infinity Care Hospital">
+      <p>Infinity Care Hospital</p>
+    </a>
+    <a class="card" href="https://octaviahospitals.com/" target="_blank">
+      <img src="https://i.ibb.co/R4CkqSkv/h10.jpg" alt="Octavia Hospital">
+      <p>Octavia Hospital</p>
+    </a>
+    <a class="card" href="https://www.practo.com/varanasi/hospital/peace-point-hospitals-bhelupura" target="_blank">
+      <img src="https://i.ibb.co/9m92p24s/h7.jpg" alt="Peace Point Hospitals">
+      <p>Peace Point Hospitals</p>
+    </a>
+  </main>
+
+  <footer>
+    &copy; 2025 Varanasi Health Guide. All rights reserved.
+    <br>
+    <a href="#top">Back to Top</a>
+  </footer>
+</body>
+</html>

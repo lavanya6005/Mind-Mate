@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sleep Aid</title>
+
+  <style>
+    :root {
+      --accent: #00d2ff;
+      --bg-light: linear-gradient(to right, #d4fc79, #96e6a1);
+      --bg-dark: linear-gradient(to right, #6a11cb, #2575fc);
+      --text-light: #222;
+      --text-dark: #fff;
+      --radius: 10px;
+      --transition: 0.3s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+      padding: 1rem; background: var(--bg-dark); color: var(--text-dark);
+      transition: background var(--transition), color var(--transition);
+    }
+    h1 { font-size: clamp(2rem,6vw,3rem); margin-bottom: .5rem; color: var(--accent); }
+    p { font-size: clamp(1rem,2.5vw,1.25rem); }
+    header { text-align: center; margin-bottom: 2rem; }
+    main {
+      width: 100%; max-width: 600px; display: flex; flex-direction: column; align-items: center;
+    }
+    .breathing { text-align: center; margin-bottom: 2rem; }
+    #circle {
+      width: clamp(100px,30vw,150px); height: clamp(100px,30vw,150px);
+      background: rgba(255,255,255,0.5); border-radius: 50%;
+      margin: 0 auto 1rem;
+      animation: breathe 8s ease-in-out infinite;
+      animation-play-state: paused; /* start paused */
+      transition: box-shadow var(--transition);
+    }
+    @keyframes breathe {
+      0%,100% { transform: scale(1); }
+      50%     { transform: scale(1.5); }
+    }
+    #circle:hover { box-shadow: 0 0 20px rgba(255,255,255,0.8); }
+    #breathing-text { font-size: clamp(1rem,2.5vw,1.5rem); margin-bottom: 2rem; }
+
+    .controls {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem;
+    }
+    button, select {
+      background: var(--accent); color: white; border: none;
+      padding: .75rem 1.5rem; font-size: clamp(.9rem,2vw,1rem);
+      border-radius: var(--radius); cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform var(--transition), box-shadow var(--transition),
+                  background var(--transition);
+    }
+    button:hover, select:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+    footer { margin-top: auto; padding: 1rem 0; font-size: .9rem; }
+    body.light { background: var(--bg-light); color: var(--text-light); }
+
+    @media (min-width: 768px) { .controls { gap: 1.5rem; } }
+    @media (prefers-reduced-motion: reduce) {
+      #circle { animation: none; }
+      button, select { transition: none; }
+    }
+    .back-btn {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      background-color: white;
+      color: #0077b6;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body class="dark">
+
+  <header>
+    <a href="mainpage.html" class="back-btn">← Back to Dashboard</a>
+    <h1>Sleep Aid</h1>
+    <p>Relax, breathe, and drift into restful sleep</p>
+  </header>
+
+  <main>
+    <section class="breathing">
+      <div id="circle"></div>
+      <div id="breathing-text">Paused</div>
+    </section>
+
+    <section class="controls">
+      <button onclick="startBreathing()">Start Breathing</button>
+      <button onclick="stopBreathing()">Stop Breathing</button>
+      <button onclick="toggleSound()">Toggle Rain Sound</button>
+      <select id="timer-select" onchange="setSleepTimer()">
+        <option value="0">No Sleep Timer</option>
+        <option value="5">5 minutes</option>
+        <option value="10">10 minutes</option>
+        <option value="15">15 minutes</option>
+      </select>
+      <button onclick="toggleMode()">Toggle Light/Dark</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Sweet dreams 🌙</p>
+  </footer>
+
+  <audio id="rain-sound" loop>
+    <source src="rain.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+
+  <script>
+    // Breathing control
+    const circle = document.getElementById('circle');
+    const text  = document.getElementById('breathing-text');
+    let phase = 0, breathInterval;
+
+    function startBreathing() {
+      // resume CSS animation
+      circle.style.animationPlayState = 'running';
+      text.textContent = ['Breathe In','Hold','Breathe Out'][phase];
+      clearInterval(breathInterval);
+      breathInterval = setInterval(() => {
+        phase = (phase + 1) % 3;
+        text.textContent = ['Breathe In','Hold','Breathe Out'][phase];
+      }, 4000);
+    }
+
+    function stopBreathing() {
+      circle.style.animationPlayState = 'paused';
+      clearInterval(breathInterval);
+      text.textContent = 'Paused';
+    }
+
+    // Rain sound toggle
+    const rainSound = document.getElementById('rain-sound');
+    let isPlaying = false;
+    function toggleSound(){
+      isPlaying ? rainSound.pause() : rainSound.play();
+      isPlaying = !isPlaying;
+    }
+
+    // Sleep timer
+    let timerId = null;
+    function setSleepTimer(){
+      clearTimeout(timerId);
+      const mins = +document.getElementById('timer-select').value;
+      if(mins>0){
+        timerId = setTimeout(() => {
+          rainSound.pause();
+          isPlaying = false;
+          alert('Sleep timer ended, sound stopped.');
+        }, mins*60000);
+      }
+    }
+
+    // Light/Dark toggle
+    function toggleMode(){
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+    }
+  </script>
+</body>
+</html>

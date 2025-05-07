@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top 10 Hospitals in New Delhi</title>
+
+  <!-- Embedded CSS -->
+  <style>
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.5;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.75rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+      opacity: 0.85;
+    }
+
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Card */
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+    .card p {
+      margin: 0;
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1e3c72;
+      color: white;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #ffc107;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Top 10 Hospitals in New Delhi</h1>
+    <p>Your guide to the most trusted medical institutions in the capital</p>
+  </header>
+
+  <main class="gallery">
+    <a class="card" href="https://www.aiims.edu/" target="_blank">
+      <img src="https://i.ibb.co/XxjCNkq9/h1.jpg" alt="All India Institute of Medical Sciences">
+      <p>All India Institute of Medical Sciences (AIIMS)</p>
+    </a>
+    <a class="card" href="https://www.sgrh.com/" target="_blank">
+      <img src="https://i.ibb.co/cSYyZ9q7/h2.jpg" alt="Sir Ganga Ram Hospital">
+      <p>Sir Ganga Ram Hospital</p>
+    </a>
+    <a class="card" href="https://www.maxhealthcare.in/hospital-network/max-super-speciality-hospital-saket" target="_blank">
+      <img src="https://i.ibb.co/SXJCHT3C/h3.jpg" alt="Max Super Speciality Hospital, Saket">
+      <p>Max Super Speciality Hospital, Saket</p>
+    </a>
+    <a class="card" href="https://www.apollohospitals.com/delhi/" target="_blank">
+      <img src="https://i.ibb.co/chhqY1GL/h4.jpg" alt="Indraprastha Apollo Hospital">
+      <p>Indraprastha Apollo Hospital</p>
+    </a>
+    <a class="card" href="https://www.fortishealthcare.com/location/fortis-escorts-heart-institute-new-delhi" target="_blank">
+      <img src="https://i.ibb.co/99TkpnSY/h5.jpg" alt="Fortis Escorts Heart Institute">
+      <p>Fortis Escorts Heart Institute</p>
+    </a>
+    <a class="card" href="http://vmmc-sjh.nic.in/Default_Hospital.aspx" target="_blank">
+      <img src="https://i.ibb.co/xKTYg9VT/h6.jpg" alt="Safdarjung Hospital">
+      <p>Safdarjung Hospital</p>
+    </a>
+    <a class="card" href="http://rmlh.nic.in/" target="_blank">
+      <img src="https://i.ibb.co/9m92p24s/h7.jpg" alt="Dr. Ram Manohar Lohia Hospital">
+      <p>Dr. Ram Manohar Lohia Hospital</p>
+    </a>
+    <a class="card" href="https://lnjp.delhi.gov.in/" target="_blank">
+      <img src="https://i.ibb.co/C3q8hHL6/h9.jpg " alt="Lok Nayak Hospital">
+      <p>Lok Nayak Hospital</p>
+    </a>
+  </main>
+
+  <footer>
+    &copy; 2025 Delhi Health Guide. All rights reserved.
+    <br>
+    <a href="#top">Back to Top</a>
+  </footer>
+</body>
+</html>
